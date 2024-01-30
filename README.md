@@ -12,7 +12,7 @@
   hugo mod init my-project
   ```
 
-- Declare theme
+- Declare theme in `config/_default/module.toml`
 
   ```bash
   [[imports]]
@@ -44,7 +44,7 @@
 
 ## Using GitHub Pages
 
-- Create this file
+- Create this file in `github/workflows/gh-pages.yml`
 
   ```yml
   # .github/workflows/gh-pages.yml
@@ -94,6 +94,4 @@
 
 - Turn off then on `Deploy from branch`. It WILL FAIL the first time. However, this will create a branch named `gh-pages`
 
-- Switch from `main` to `gh-pages` branch
-
-- It should run now
+- Switch from `main` to `gh-pages` branch (It should be successful)
