@@ -10,26 +10,26 @@
 # overridden by providing a weight value. The menu will then be
 # ordered by weight from lowest to highest.
 
+
+[[main]]
+  identifier = "search"
+  weight = 1
+  [main.params]
+    action = "search"
+
 [[main]]
   name = "Blog"
   pageRef = "posts"
   weight = 10
 
-[[main]]
-  name = "Categories"
-  pageRef = "categories"
+  [[main]]
+  name = "GitHub"
+  url = "https://github.com/thecodeofdaniel"
   weight = 20
-
-[[main]]
-  name = "Tags"
-  pageRef = "tags"
-  weight = 30
-
-[[main]]
-  identifier = "search"
-  weight = 99
   [main.params]
-    action = "search"
+    icon = "github"
+    showName = false
+    target = "_blank"
 
 [[main]]
   identifier = "locale"
@@ -41,7 +41,12 @@
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
 
-# [[footer]]
-#   name = "Tags"
-#   pageRef = "tags"
-#   weight = 10
+[[footer]]
+  name = "Tags"
+  pageRef = "tags"
+  weight = 10
+
+[[footer]]
+  name = "Categories"
+  pageRef = "categories"
+  weight = 20

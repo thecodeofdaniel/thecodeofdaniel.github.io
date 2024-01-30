@@ -3,7 +3,7 @@ languageName = "English"
 languageDirection = "ltr"
 weight = 1
 
-title = "Congo"
+title = "Daniel's Website"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 [params]
@@ -13,10 +13,10 @@ title = "Congo"
   # description = "My awesome website"
 
 [params.author]
-  # name = "Your name here"
-  # image = "img/author.jpg"
-  # headline = "I'm only human"
-  # bio = "A little bit about you"
+  name = "Daniel Rubio"
+  image = "imgs/terminator.jpeg"
+  headline = "I'm only human"
+  bio = "Always learning"
   # links = [
   #   { email = "mailto:hello@your_domain.com" },
   #   { link = "https://link-to-some-website.com/" },
