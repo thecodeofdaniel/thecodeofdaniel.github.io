@@ -1,6 +1,5 @@
 +++
-title = "My First Post"
-description = "Thanks for stopping by!"
+title = 'First Post'
 date = 2024-01-30T14:00:20-08:00
 draft = false
 +++
