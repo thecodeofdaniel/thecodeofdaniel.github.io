@@ -1,8 +1,14 @@
-# How to get Started
+# [My Website](https://thecodeofdaniel.github.io/)
 
 ## Download Congo Theme
 
 - Make sure golang is installed
+
+  ```bash
+  go version
+  ```
+
+- Initialize your project and theme with...
 
   ```bash
   # If you're managing your project on GitHub
@@ -24,14 +30,14 @@
     ```bash
     hugo mod get -u
     ```
-  
+
   - You may need to run this to clear local cache
 
     ```
     hugo mod clean
     ```
 
-- Setup theme config files (download [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/jpanther/congo/tree/stable/config/_default))
+- Copy and paste the theme config files [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/jpanther/congo/tree/stable/config/_default) except for `module.toml`
 
   ```bash
   config/_default/
@@ -42,7 +48,7 @@
   └─ params.toml
   ```
 
-## Using GitHub Pages
+## Deploy Using GitHub Pages
 
 - Create this file in `github/workflows/gh-pages.yml`
 
@@ -86,12 +92,18 @@
             publish_dir: ./public
   ```
 
+### Other Requirements
+
 - Make sure base URL follows the one on github in `hugo.toml`
 
 - Change version of golang to go from `x.x.x` to `x.x`
 
-- Change workflow permissions to `Read and write permissions` and check `Allow GitHub Actions to create and approve pull requests`
+- Change workflow permissions (Settings > Actions > General > Workflow Permissions)
+  - Select `Read and write permissions`
+  - Check `Allow GitHub Actions to create and approve pull requests`
 
-- Turn off then on `Deploy from branch`. It WILL FAIL the first time. However, this will create a branch named `gh-pages`
-
-- Switch from `main` to `gh-pages` branch (It should be successful)
+- Change branches (Settings > Pages > Build and deployment)
+  - Select `Deploy from branch`
+  - Select the `main` branch
+    - It WILL FAIL the first time. However, this will create a branch named `gh-pages`
+  - Switch from `main` to `gh-pages` branch (It should be successful)
