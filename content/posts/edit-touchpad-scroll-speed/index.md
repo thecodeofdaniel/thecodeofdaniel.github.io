@@ -21,19 +21,19 @@ tags = ["X11", "Xorg", "Laptop"]
   xinput
   ```
 
-- Once you found the touchpad, lits it's properties
+- Once you found the touchpad, list its properties
 
   ```
   xinput list-props <device_id>
   ```
 
-- You'll want to find this option: `ScrollPixelDistance` and it's associated `sub id`
+- You'll want to find this option: `ScrollPixelDistance` and its associated `sub id`
 
   ```bash
   xinput set-prop <device_id> <sub_id> <value>
   # e.g. xinput set-prop 12 318 45
   ```
-    - When listing the properites of the touchpad, you'll see the default `ScrollPixelDistance`. Change this value to see which you like.
+    - When listing the properites of the touchpad, you'll see the default `ScrollPixelDistance`. This will give you a base to work on.
 
 ## Make a Permanent Change
 
