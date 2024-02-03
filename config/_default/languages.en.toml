@@ -14,8 +14,8 @@ title = "Daniel's Website"
 
 [params.author]
   name = "Daniel Rubio"
-  image = "imgs/terminator.jpeg"
-  headline = "I'm only human"
+  image = "imgs/terminator.jpg"
+  headline = "Always learning"
   bio = "Always learning"
   # links = [
   #   { email = "mailto:hello@your_domain.com" },
