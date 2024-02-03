@@ -2,6 +2,7 @@
 title = 'Changing Username in Linux'
 date = 2024-02-03T03:18:37-08:00
 draft = false
+categories = ["Linux"]
 +++
 
 # Before You begin!
