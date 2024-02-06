@@ -1,7 +1,7 @@
 +++
 title = 'Hello there :) 👋'
 date = 2024-02-06T00:34:08-08:00
-draft = true
+draft = false
 showDate = false
 showReadingTime = false
 +++
