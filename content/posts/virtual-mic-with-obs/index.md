@@ -3,7 +3,7 @@ title = 'How to setup a VAC (Virtual Audio Cable) on Linux and use OBS with it'
 date = 2024-02-13T23:13:03-08:00
 draft = false
 description = "Setting up a VAC (Virtual Audio Cable) on Linux to setup a virtual microphone. And applying OBS filters to virtual microphone"
-categories = ["Linux", "OBS"]
+categories = ["Linux", "OBS", "Sound"]
 tags = ["Wireplumber", "Pipewire", "PulseAudio"]
 +++
 
