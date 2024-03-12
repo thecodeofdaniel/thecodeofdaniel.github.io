@@ -1,2 +1,5 @@
 # Ignore the resources dir when running "hugo server"
 resources
+
+# Ignore the public directory
+public
