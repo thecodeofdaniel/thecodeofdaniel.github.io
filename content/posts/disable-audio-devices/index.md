@@ -15,11 +15,12 @@ tags = ["Wireplumber", "Pipewire"]
   pactl list cards short
   ```
 
-- Find the __name__ of the current audio input/output YOUR using
+- Find the **name** of the current audio input/output YOUR using
 
   ```
   wpctl status
   ```
+
   - It will be listed at the bottom
   - To get more info on the audio inputs/outputs (sources/sinks)
 
@@ -29,7 +30,8 @@ tags = ["Wireplumber", "Pipewire"]
 
 ## Create the config file
 
-- Once you've found the device, create a configuration file in `~/.config/wireplumber/main.lua.d`.
+- Once you've found the device, create a configuration file in
+  `~/.config/wireplumber/main.lua.d`.
 
 - If it doesn't exist, run
 
@@ -37,7 +39,8 @@ tags = ["Wireplumber", "Pipewire"]
   mkdir -p ~/config/wireplumber/main.lua.d/
   ```
 
-- Name the file `<value>-disable-devices.lua` with the value not conflicting others in that directory
+- Name the file `<value>-disable-devices.lua` with the value not conflicting
+  others in that directory
 
   ```
   touch  ~/config/wireplumber/main.lua.d/<value>-disable-devices.lua
@@ -98,7 +101,8 @@ tags = ["Wireplumber", "Pipewire"]
 
 ## Run the configuration
 
-  ```
-  systemctl --user restart wireplumber
-  ```
-  - Now you don't have to see those devices from your sound settings! :D
+```
+systemctl --user restart wireplumber
+```
+
+- Now you don't have to see those devices from your sound settings! :D

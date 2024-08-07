@@ -3,7 +3,7 @@ languageName = "English"
 languageDirection = "ltr"
 weight = 1
 
-title = "Daniel's Page"
+title = "Daniel's Guides"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 [params]
@@ -15,11 +15,11 @@ title = "Daniel's Page"
 [params.author]
   name = "Daniel Rubio"
   image = "imgs/basedman.jpg"
-  headline = "Always learning"
-  bio = "Always learning"
+  headline = "Welcome to my guides/tutorials!"
+  bio = ""
   links = [
-  #   { email = "mailto:hello@your_domain.com" },
-  #   { link = "https://link-to-some-website.com/" },
+      { email = "mailto:rubiodaaniel@gmail.com" },
+      { link = "https://portfolio-2cd26.web.app/" },
   #   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
   #   { apple = "https://www.apple.com" },
   #   { blogger = "https://username.blogspot.com/" },
