@@ -21,7 +21,7 @@ with a partition below.
 
 ## Note
 
-This will work both on a unencrypted or encrypted Pop!\_OS install.
+This will also work on an encrypted Pop!\_OS install.
 
 ## Setup swapfile
 
