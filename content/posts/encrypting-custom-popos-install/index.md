@@ -77,7 +77,8 @@ Now go through the installation wizard, select Custom (Advanced) for
 partitioning. Select the `/dev/sdx` partition from earlier and it will ask you
 for the encryption password. Select the logical volume within the encrypted
 partition as the destination for the OS installation. Finish the installation as
-usual. And... that's it! Pop!\_OS! will ask you for your disk password on every boot.
+usual. And... that's it! Pop!\_OS! will ask you for your disk password on every
+boot.
 
 ## Where I got my info from
 

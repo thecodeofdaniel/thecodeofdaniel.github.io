@@ -5,57 +5,58 @@ draft = false
 categories = ["Linux"]
 +++
 
-# Before You begin!
+## Before you begin!
 
-- You should login as another user or become root
-  - To create a new user
+You should login as another user or become root
 
-    ```
-    # usermod -aG sudo <other_user>
-    ```
+- To create a new user
 
-## Let's get Started!
-
-- Change the username
-
-  ```
-  # usermod -l <new_name> <old_name>
+  ```bash
+  sudo usermod -aG sudo <other_user>
   ```
 
-- Change the groups `<old_name>` to new username
+## Let's get started!
 
-  ```
-  # groupmod -n <new_name> <old_name>
-  ```
+Change the username
 
-  - Confirm this by looking into old home directory of `<old_name>`
+```bash
+sudo usermod -l <new_name> <old_name>
+```
 
-    ```
-    ls -ld /home/<old_name>
-    ```
+Change the groups `<old_name>` to new username
 
-  - The owner and group owner should now be owned by `<new_name>`
+```bash
+sudo groupmod -n <new_name> <old_name>
+```
 
-## Change Username for Home Directory
+Confirm this by looking into old home directory of `<old_name>`
 
-- Your home directory still may have previous name, here's the fix...
+```
+ls -ld /home/<old_name>
+```
 
-  ```
-  # usermod -d /home/<new_name> -m <new_name>
-  ```
+- The owner and group owner should now be owned by `<new_name>`
 
-  - Check to confirm
+## Change username for home directory
 
-    ```
-    ls -ld /home/<new_name>
-    ```
+Your home directory still may have previous name, here's the fix...
 
-## Edit Username in GDM login screen
+```bash
+sudo usermod -d /home/<new_name> -m <new_name>
+```
 
-- When you log back in, you may still have previous name, here's the fix...
+Check to confirm
 
-  ```
-  # usermod -c "<new_name>" <new_name>
-  ```
+```bash
+ls -ld /home/<new_name>
+```
 
-### And we're DONE!
+## Edit username in GDM login screen
+
+When you log back in, you may still have previous name, here's the fix...
+
+```bash
+sudo usermod -c "<new_name>" <new_name>
+```
+
+That's it!
