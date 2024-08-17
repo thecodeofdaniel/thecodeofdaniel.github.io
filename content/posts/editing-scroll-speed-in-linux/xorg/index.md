@@ -6,54 +6,61 @@ categories = ["Linux"]
 tags = ["X11", "Xorg", "Laptop"]
 +++
 
-# Story Time
+## Reason
 
-- Trying Linux on a laptop was very unenjoyable in the beginning. The MAIN reason being touchpad scroll speed. It's just way too fast and it lead to me using an external mouse. However, with some perseverance I found a solution. I'll show you how :)
+Trying Linux on a laptop was very unenjoyable in the beginning. The MAIN reason
+being touchpad scroll speed. It's just way too fast and it lead to me using an
+external mouse. However, with some perseverance I found a solution :)
 
+## Use `libinput`
 
-# Use `libinput`
+Find the Device **ID** for the touchpad
 
+```bash
+xinput
+```
 
+Once you found the touchpad, list its properties
 
-- Find the Device __ID__ for the touchpad
+```bash
+xinput list-props <device_id>
+```
 
-  ```
-  xinput
-  ```
+You'll want to find this option: `ScrollPixelDistance` and its associated
+`sub id`
 
-- Once you found the touchpad, list its properties
+```bash
+xinput set-prop <device_id> <sub_id> <value>
+# e.g. xinput set-prop 12 318 45
+```
 
-  ```
-  xinput list-props <device_id>
-  ```
+- When listing the properites of the touchpad, you'll see the default
+  `ScrollPixelDistance`. This will give you a base to work on.
 
-- You'll want to find this option: `ScrollPixelDistance` and its associated `sub id`
+## Make a permanent change
 
-  ```bash
-  xinput set-prop <device_id> <sub_id> <value>
-  # e.g. xinput set-prop 12 318 45
-  ```
-    - When listing the properites of the touchpad, you'll see the default `ScrollPixelDistance`. This will give you a base to work on.
+The commands above will only work for that session. So if you turn off or
+restart your laptop, the settings you put will be gone. We can fix that though!
 
-## Make a Permanent Change
+Create a file with this piece of code in this directory `/etc/X11/xorg.conf.d/`
 
-- The commands above will only work for that session. So if you turn off or restart your laptop, the settings you put will be gone. We can fix that though!
+```bash
+# /etc/X11/xorg.conf.d/<some_value>-libinput.conf
+Section "InputClass"
+  Identifier "libinput touchpad catchall"
+  MatchIsTouchpad "on"
+  MatchDevicePath "/dev/input/event*"
+  Driver "libinput"
+  Option "ScrollPixelDistance" "50"
+EndSection
+```
 
-- Create a file with this piece of code in this directory
-  - `/etc/X11/xorg.conf.d/`
+Replace the value of `50` with the value YOU liked
 
-    ```bash
-    # /etc/X11/xorg.conf.d/<some_value>-libinput.conf
-    Section "InputClass"
-      Identifier "libinput touchpad catchall"
-      MatchIsTouchpad "on"
-      MatchDevicePath "/dev/input/event*"
-      Driver "libinput"
-      Option "ScrollPixelDistance" "50"
-    EndSection
-    ```
-  - Replace the value of `50` with the value YOU liked
-  - Name the file similar to this (higher value = having higher priority to other configurations your Linux disto has made)
-    - `39-libinput.conf`
-  - You can see other similar configurations in
-    - `/usr/share/X11/xorg.conf.d`
+Name the file similar to this (higher value = having higher priority to other
+configurations your Linux disto has made)
+
+- `39-libinput.conf`
+- You can see other similar configurations in `/usr/share/X11/xorg.conf.d`
+
+Reboot and your settings should be saved! :D
