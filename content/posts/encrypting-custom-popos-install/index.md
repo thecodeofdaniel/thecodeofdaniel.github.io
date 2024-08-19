@@ -80,6 +80,32 @@ partition as the destination for the OS installation. Finish the installation as
 usual. And... that's it! Pop!\_OS! will ask you for your disk password on every
 boot.
 
+## Optional (Skipping Login)
+
+When you login, you'll be prompted to enter the encryption password. After that
+it'll ask you for your login password. This is pretty annoying, especially if
+you're using the same password for encryption and login.
+
+**Note**: Don't worry it'll still ask for you login password after you lock
+or suspend your computer.
+
+Edit the `/etc/gdm3/custom.conf` and edit the `daemon` section in the file
+
+```bash
+# /etc/gdm3/custom.conf
+...
+[daemon]
+...
+# Enabling automatic login
+   AutomaticLoginEnable = true
+   AutomaticLogin = user
+...
+```
+
+- Replace the username with the your actual username.
+
+Then just restart and it should apply :)
+
 ## Where I got my info from
 
 - https://blog.stefandroid.com/2023/02/04/encrypted-disk-pop-os-install.html
