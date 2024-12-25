@@ -3,7 +3,7 @@ languageName = "English"
 languageDirection = "ltr"
 weight = 1
 
-title = "Daniel's Guides"
+title = "Daniel's Blog"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 [params]
@@ -15,7 +15,7 @@ title = "Daniel's Guides"
 [params.author]
   name = "Daniel Rubio"
   image = "imgs/basedman.jpg"
-  headline = "Welcome to my guides/tutorials!"
+  headline = "Welcome to my blog!"
   bio = ""
   links = [
       { github = "https://github.com/thecodeofdaniel" },

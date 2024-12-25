@@ -12,3 +12,5 @@ web/mobile applications to building efficient and low wattage home servers. I
 thrive on the challenges and creative opportunities they offer. Beyond that, I
 enjoy weight lifting, playing basketball, and I also enjoy finding new music in
 all kinds of genres including metal, electronic, and hip-hop.
+
+View my [portfolio](https://danielrubio.vercel.app)
