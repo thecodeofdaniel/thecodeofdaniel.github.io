@@ -1,26 +1,15 @@
 +++
-title = 'Peforming Activities on the Network with Azure'
+title = 'Inspecting Traffic Between Azure Virtual Machines'
 date = 2024-12-24T06:50:03-08:00
 draft = false
-description = "Observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups"
-categories = ["Azure"]
+description = "Observe various network traffic to and from Azure Virtual Machines with Wireshark"
+categories = ["Azure", "Windows"]
 tags = ["VMs", "ICMP", "Firewall", "SSH", "DHCP"]
 +++
 
-In this tutorial, we observe various network traffic to and from Azure VMs with
-Wireshark as well as experiment with Network Security Groups.
-
-## Brief Overview
-
-This project demonstrates how to inspect network traffic between two Azure
-Virtual Machines (VMs) on the same network. By setting up a Windows VM and a
-Linux (Ubuntu) VM, I explored the flow of traffic, tools for monitoring, and the
-differences in observed traffic patterns.
-
-### Purpose
-
-Understanding VM traffic patterns is crucial for network monitoring,
-troubleshooting, and enhancing security in a cloud environment.
+In this lab, I observe different kinds of network traffic to and from Azure
+virtual machines with Wireshark as well as experiment with network security
+groups.
 
 ## Before We Get Started
 
@@ -37,47 +26,48 @@ troubleshooting, and enhancing security in a cloud environment.
 - Windows 10
 - Ubuntu 20.04
 
-## Actions And Observations
+## Setup
 
 ### Creating the VMs
 
-To create the VMs, ensure they are placed in the same Resource Group. I named
-mine `RG-Network-Activities`, but you can choose any name you prefer.
+I created a resource group to place these virtual machines in. I named mine
+`RG-Network-Activities`.
 
 ![Resource Group Image](./imgs/01.png "Resource Group")
 
-After that we'll create two VMs on the same network. Ensure they are:
+Ensure the VMs are in the same:
 
-- In the same region.
-- Attached to the same virtual network.
+- resource group
+- region
+- virtual network
 
 #### Windows VM
 
-Ensure the VM is placed within the resource group we created earlier. For this
-project, I selected a standard VM size with 2 vCPUs and 16 GiB of memory.
+I placed this VM in the resource group I just created and within the same
+region. Make sure to select the Windows 10 Pro image.
+
+- I selected a standard VM size with 2 vCPUs and 16 GiB of memory.
 
 ![WindowsVM Image](./imgs/02.png "Windows VM creation")
 
 The final step is to create a virtual network. For this project, I created a new
-network and named it `lab-vnet`, as shown below.
+network and named it `lab-vnet`.
 
 ![Virtual Network Image](./imgs/03.png "Virtual Network")
 
 #### Linux VM
 
-Follow the same steps as for the Windows VM, but select the appropriate image
-for Linux. In my case, I chose the latest Ubuntu LTS version.
+I followed the same steps as for the Windows VM, but selected the appropriate
+image. In my case, I chose the latest Ubuntu Server LTS version. The VM size
+doesn't matter here.
 
 ![Linux VM Image](./imgs/04.png "Linux VM creation")
 
 However, under the `Administrator Account`, make sure to change the setting from
 `SSH public key` to `Password`. Although SSH public key is a good security
-practice, this is just a demo, and it will make our lives a little easier.
+practice, this is just a demo and will be deleted soon after.
 
-![Linux VM Image](./imgs/05.png "Linux VM creation")
-
-Then, just make sure the Linux VM is under the same `Virtual Network` as the
-Windows VM.
+![Linux Authentication Type Image](./imgs/05.png "Linux Authentication Type")
 
 ### Connect to Windows VM
 
@@ -124,38 +114,38 @@ interact with the VM.
 
 ![FreeRDP Command Line Image](./imgs/06.png "FreeRDP Command Line")
 
-### Observe ICMP Traffic
+## Observations
 
-In order to observer the traffic, we'll be using Wireshark. So install Wireshark
-onto the Windows VM.
+### ICMP Traffic
 
-![Installing Wireshark Image](./imgs/07.png "Installing Wireshark Line")
-
-Now that it's installed, we can observe the ICMP traffic by pinging the Linux
-VM. The private IP of the Linux VM in my case is `10.0.0.5`. When we run the
-ping command, the following output will be displayed.
+Within Wireshark, I filtered for ICMP (Internet Control Message Protocol)
+traffic and opened PowerShell to execute a command called ping. Ping utilizes
+ICMP, which is used by devices in a network to communicate problems within data
+transmition. I used ping to see if I can communicate with the Ubuntu VM using
+its private IP address. The private IP of the Linux VM in my case is `10.0.0.5`.
+When we run the ping command, the following output will be displayed.
 
 ![ICMP Image](./imgs/08.png "Observe ICMP Traffic")
 
 You'll notice that `10.0.0.4` (Windows VM) sends a request to `10.0.0.5`
 (Linux VM), which then causes the Linux VM to reply!
 
-### Configure a Firewall
+### Configure Network Security Groups (Firewall)
 
-Now, we can create a firewall rule to disable the ICMP traffic. By going into
-Azure and adjusting the settings for the Linux VM, we can create an inbound rule
-as shown below.
+Within the Azure portal, I opened the networking settings for the Ubuntu VM and
+added an inbound security rule to block ICMP traffic. I make sure to have the
+priority higher than SSH (300) to ensure the rule applies first.
 
 ![Deny ICMP Traffic Image](./imgs/09.png "Deny ICMP Traffic")
 
-If we wait a while and try pinging again, we’ll see that the request times out
-and we no longer receive a reply from the Linux VM.
+Upon returning to the Windows VM, I notice that the ICMP traffic is blocked now
+that the inbound security rule is in place.
 
 ![ICMP Image](./imgs/10.png "Request Timeout")
 
-If you delete this rule and try pinging again, you'll receive the reply back!
+If you delete this rule, the ping resolves without timing out!
 
-### Observe SSH Traffic
+### SSH Traffic
 
 Next, let's observe the SSH traffic. From the Windows VM, we can SSH into the
 Linux VM using its private IP address.
@@ -171,10 +161,12 @@ Wireshark whenever you start typing in the command line, as shown below.
 
 ![SSH Image](./imgs/11.png "SSH")
 
-This is similar to the RDP protocol (3389), but instead of a GUI, it operates
-through the command line.
+SSH is similar to the RDP protocol (3389) in that it allows remote access to a
+machine. However, SSH is a text-based protocol designed for command-line
+interactions, whereas RDP provides a graphical user interface. Both achieve
+remote access, but they are optimized for different use cases.
 
-### Observe DHCP Traffic
+### DHCP Traffic
 
 Now, let's observe some DHCP traffic. This protocol is used when a device or
 node is not assigned a static IP and needs to request an IP from the DHCP
@@ -196,3 +188,13 @@ Windows VM.
 
 Although the IP address appears the same as before, we actually release the IP
 the VM was initially assigned and receive a new IP from the DHCP server.
+
+## Final Thoughts
+
+The purpose of this lab is to explore how different protocols and ports are
+utilized in network communication between devices. Although this lab is not
+specifically focused on troubleshooting, it provides valuable insights into
+network traffic and behavior. During troubleshooting, tools like Wireshark and
+command-line utilities are essential for analyzing how traffic flows through
+various ports and protocols, making this lab a foundational step in
+understanding network dynamics.
