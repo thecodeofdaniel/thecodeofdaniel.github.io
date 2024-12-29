@@ -1,7 +1,7 @@
 +++
-title = 'Managing User Account Security and Simulating Lockouts in Active Directory'
+title = 'Active Directory: Managing User Account Security and Simulating Lockouts'
 date = 2024-12-28T18:59:45-08:00
-draft = true
+draft = false
 +++
 
 ## Managing Account Lockouts and User Security in Active Directory
@@ -64,3 +64,15 @@ can see Audit Failure logs indicating the five failed login attempts we
 simulated earlier.
 
 ![Imgur](https://i.imgur.com/90K2DOX.png "Event Viewer")
+
+## Lessons Learned
+
+This lab was an invaluable opportunity to dive into managing account security
+and lockout policies in Active Directory. I explored how to configure account
+lockout thresholds, enforce policies across the domain, and simulate failed
+login attempts to better understand the lockout process.
+
+Unlocking accounts, resetting passwords, and disabling or enabling user access
+gave me practical insight into managing real-world scenarios. Monitoring failed
+login attempts through the Event Viewer also highlighted how essential audit
+logs are for identifying potential security threats.

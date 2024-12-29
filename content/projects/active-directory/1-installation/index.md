@@ -1,7 +1,7 @@
 +++
-title = 'Installing Active Directory in Azure'
+title = 'Active Directory: Setting Up on Azure'
 date = 2024-12-28T08:14:06-08:00
-draft = true
+draft = false
 categories = ["Windows"]
 tags = ["Active Directory", "Powershell"]
 +++

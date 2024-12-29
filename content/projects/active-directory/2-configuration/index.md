@@ -1,7 +1,7 @@
 +++
-title = 'Windows Active Directory Configuration'
+title = 'Active Directory: Organizational Units, Domain Joining, and User Management'
 date = 2024-12-28T08:14:19-08:00
-draft = true
+draft = false
 categories = ["Windows"]
 tags = ["Active Directory", "Powershell"]
 +++

@@ -1,6 +1,6 @@
 +++
-title = 'Windows Active Directory'
-draft = true
+title = 'Windows Active Directory in Azure'
+draft = false
 +++
 
 ### Environments and Technologies Used
