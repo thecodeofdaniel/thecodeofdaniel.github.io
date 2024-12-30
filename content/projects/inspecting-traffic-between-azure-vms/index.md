@@ -33,7 +33,7 @@ groups.
 I created a resource group to place these virtual machines in. I named mine
 `RG-Network-Activities`.
 
-![Resource Group Image](./imgs/01.png "Resource Group")
+![Resource Group Image](https://i.imgur.com/HQDubXm.png "Resource Group")
 
 Ensure the VMs are in the same:
 
@@ -48,12 +48,12 @@ region. Make sure to select the Windows 10 Pro image.
 
 - I selected a standard VM size with 2 vCPUs and 16 GiB of memory.
 
-![WindowsVM Image](./imgs/02.png "Windows VM creation")
+![WindowsVM Image](https://i.imgur.com/lioFPkC.png "Windows VM creation")
 
 The final step is to create a virtual network. For this project, I created a new
 network and named it `lab-vnet`.
 
-![Virtual Network Image](./imgs/03.png "Virtual Network")
+![Virtual Network Image](https://i.imgur.com/wGIPtsI.png "Virtual Network")
 
 #### Linux VM
 
@@ -61,13 +61,13 @@ I followed the same steps as for the Windows VM, but selected the appropriate
 image. In my case, I chose the latest Ubuntu Server LTS version. The VM size
 doesn't matter here.
 
-![Linux VM Image](./imgs/04.png "Linux VM creation")
+![Linux VM Image](https://i.imgur.com/OdwZAWl.png "Linux VM creation")
 
 However, under the `Administrator Account`, make sure to change the setting from
 `SSH public key` to `Password`. Although SSH public key is a good security
 practice, this is just a demo and will be deleted soon after.
 
-![Linux Authentication Type Image](./imgs/05.png "Linux Authentication Type")
+![Linux Authentication Type Image](https://i.imgur.com/c4B4qw5.png "Linux Authentication Type")
 
 ### Connect to Windows VM
 
@@ -112,7 +112,7 @@ xfreerdp /u:labuser /p:Cyberlab123! /v:40.78.64.143 /f
 Simply type `Y` to trust the certificate, and you should be able to log in and
 interact with the VM.
 
-![FreeRDP Command Line Image](./imgs/06.png "FreeRDP Command Line")
+![FreeRDP Command Line Image](https://i.imgur.com/UJBtQtO.png "FreeRDP Command Line")
 
 ## Observations
 
@@ -125,7 +125,7 @@ transmition. I used ping to see if I can communicate with the Ubuntu VM using
 its private IP address. The private IP of the Linux VM in my case is `10.0.0.5`.
 When we run the ping command, the following output will be displayed.
 
-![ICMP Image](./imgs/08.png "Observe ICMP Traffic")
+![ICMP Image](https://i.imgur.com/AT1dGl9.png "Observe ICMP Traffic")
 
 You'll notice that `10.0.0.4` (Windows VM) sends a request to `10.0.0.5`
 (Linux VM), which then causes the Linux VM to reply!
@@ -136,12 +136,12 @@ Within the Azure portal, I opened the networking settings for the Ubuntu VM and
 added an inbound security rule to block ICMP traffic. I make sure to have the
 priority higher than SSH (300) to ensure the rule applies first.
 
-![Deny ICMP Traffic Image](./imgs/09.png "Deny ICMP Traffic")
+![Deny ICMP Traffic Image](https://i.imgur.com/wQiJ1I6.png "Deny ICMP Traffic")
 
 Upon returning to the Windows VM, I notice that the ICMP traffic is blocked now
 that the inbound security rule is in place.
 
-![ICMP Image](./imgs/10.png "Request Timeout")
+![ICMP Image](https://i.imgur.com/psqbOAu.png "Request Timeout")
 
 If you delete this rule, the ping resolves without timing out!
 
@@ -159,7 +159,7 @@ ssh <username>@<private_ip_of_linux_vm>
 Then, simply enter the password for the user. You'll notice the SSH traffic in
 Wireshark whenever you start typing in the command line, as shown below.
 
-![SSH Image](./imgs/11.png "SSH")
+![SSH Image](https://i.imgur.com/osG1ijQ.png "SSH")
 
 SSH is similar to the RDP protocol (3389) in that it allows remote access to a
 machine. However, SSH is a text-based protocol designed for command-line
@@ -184,7 +184,7 @@ Now, this may disconnect you from the RDP client tool you're using. This is
 fine, as we'll still be able to observe the traffic when logging back into the
 Windows VM.
 
-![DHCP Image](./imgs/12.png "DHCP Traffic")
+![DHCP Image](https://i.imgur.com/69MpciV.png "DHCP Traffic")
 
 Although the IP address appears the same as before, we actually release the IP
 the VM was initially assigned and receive a new IP from the DHCP server.

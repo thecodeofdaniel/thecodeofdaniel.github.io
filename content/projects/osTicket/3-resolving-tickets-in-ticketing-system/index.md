@@ -16,13 +16,13 @@ problems that could arise in a real-world environment. Each ticket includes a
 selected Help Topic, a brief summary of the issue, and detailed descriptions
 written in an email-like format.
 
-![Creating Ticket Image](./imgs/01.png)
-![Creating Ticket Image](./imgs/02.png)
-![Creating Ticket Image](./imgs/03.png)
+![Creating Ticket Image](https://i.imgur.com/5Yi9tDP.png)
+![Creating Ticket Image](https://i.imgur.com/2gUdLs2.png)
+![Creating Ticket Image](https://i.imgur.com/izPtPi3.png)
 
 ## Resolving Tickets
 
-![Creating Ticket Image](./imgs/04.png)
+![Creating Ticket Image](https://i.imgur.com/6Jp1B57.png)
 
 From an admin's perspective, ticket requests appear in their panel once
 submitted. Admins can then reassign tickets to an agent or the appropriate team.
@@ -33,19 +33,19 @@ to "Emergency."
 
 <div style="display: flex; justify-content: space-between; gap: 4px;">
   <figure style="width: 50%; text-align: center;">
-    <img src="./imgs/05.png" style="width: 100%;" />
+    <img src="https://i.imgur.com/wTMjD8L.png" style="width: 100%;" />
   </figure>
   <figure style="width: 50%; text-align: center;">
-    <img src="./imgs/06.png" style="width: 100%;" />
+    <img src="https://i.imgur.com/2apHIUT.png" style="width: 100%;" />
   </figure>
 </div>
 
 <div style="display: flex; justify-content: space-between; gap: 4px;">
   <figure style="width: 50%; text-align: center;">
-    <img src="./imgs/07.png" style="width: 100%;" />
+    <img src="https://i.imgur.com/5xIncgG.png" style="width: 100%;" />
   </figure>
   <figure style="width: 50%; text-align: center;">
-    <img src="./imgs/08.png" style="width: 100%;" />
+    <img src="https://i.imgur.com/rOnhHxy.png" style="width: 100%;" />
   </figure>
 </div>
 

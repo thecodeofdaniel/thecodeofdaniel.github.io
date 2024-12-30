@@ -1,7 +1,7 @@
 +++
 title = 'osTicket - Prerequisites and Installation'
 date = 2024-12-25T13:22:15-08:00
-draft = true
+draft = false
 +++
 
 This tutorial outlines the prerequisites and installation of the open-source
@@ -46,11 +46,11 @@ this [post!](./../../azure/activities-on-the-network-with-azure/index.md#connect
 
 You'll go to your control panel and view programs
 
-![Control Panel Image](./imgs/01.png "Control Panel")
+![Control Panel Image](https://i.imgur.com/4kGLGVk.png "Control Panel")
 
 Then click `Turn Windows features on or off`.
 
-![Control Panel Image](./imgs/02.png "Turn Windows features on or off")
+![Control Panel Image](https://i.imgur.com/yP75Tb7.png "Turn Windows features on or off")
 
 You will want to install / enable IIS in Windows with CGI and Common HTTP Features
 
@@ -61,18 +61,18 @@ World Wide Web Services -> Application Development Features
 
 <div style="display: flex; justify-content: space-between; gap: 4px;">
   <figure style="width: 50%; text-align: center;">
-    <img src="./imgs/03.png" style="width: 100%;" />
+    <img src="https://i.imgur.com/MgOv3du.png" style="width: 100%;" />
     <figcaption>CGI</figcaption>
   </figure>
   <figure style="width: 50%; text-align: center;">
-    <img src="./imgs/04.png" style="width: 100%;" />
+    <img src="https://i.imgur.com/6xqC8oy.png" style="width: 100%;" />
     <figcaption>Common HTTP Features</figcaption>
   </figure>
 </div>
 
 To make sure the IIS is installed / enabled go to a browser of your choice and view localhost or 127.0.0.1. It should look something like this.
 
-![Localhost Image](./imgs/05.png "localhost (127.0.0.1)")
+![Localhost Image](https://i.imgur.com/RrJjNtY.png "localhost (127.0.0.1)")
 
 ### Installation Files
 
@@ -86,7 +86,7 @@ Now that the IIS is enabled
 - Install `VC_redist.x86.exe`
 - Install MySQL 5.5.62 (mysql-5.5.62-win32.msi)
   - Make the root password: `root` for simplicity sake
-    ![MySQL Installation Image](./imgs/06.png "MySQL Installation")
+    ![MySQL Installation Image](https://i.imgur.com/QJDVQ59.png "MySQL Installation")
 
 ### Configuration
 
@@ -96,23 +96,23 @@ IIS.
 
 <div style="display: flex; justify-content: space-between; gap: 4px;">
   <figure style="width: 50%; text-align: center;">
-    <img src="./imgs/07.png" style="width: 100%;" />
+    <img src="https://i.imgur.com/hglUQos.png" style="width: 100%;" />
     <figcaption>IIS</figcaption>
   </figure>
   <figure style="width: 50%; text-align: center;">
-    <img src="./imgs/08.png" style="width: 100%;" />
+    <img src="https://i.imgur.com/4lrGcYv.png" style="width: 100%;" />
     <figcaption>Register PHP</figcaption>
   </figure>
 </div>
 
 Register new PHP version.
 
-![ISS Image](./imgs/09.png)
+![ISS Image](https://i.imgur.com/QwLJEVZ.png)
 
 You will want to provide a path to the php executable file (`php-cgi.exe`) as
 shown below
 
-![ISS Image](./imgs/10.png "Provide path")
+![ISS Image](https://i.imgur.com/75j8M0p.png "Provide path")
 
 Then restart the IIS server by stopping and starting.
 
@@ -120,11 +120,11 @@ Then restart the IIS server by stopping and starting.
 
 On IIS go to sites -> Default -> osTicket -On the right, click “Browse \*:80”
 
-![ISS Image](./imgs/11.png)
+![ISS Image](https://i.imgur.com/C0bg2lW.png)
 
 Some extensions are not enabled on the osTicket browser. We'll do so now.
 
-![osTicket Image](./imgs/12.png "osTicket")
+![osTicket Image](https://i.imgur.com/1C6srfE.png "osTicket")
 
 To enable the extensions: -Go back to IIS, sites -> Default -> osTicket -Double click PHP manager -Click "Enable or disable an extension"
 
@@ -134,7 +134,7 @@ We will want to enable three extensions from here.
 - php_intl.dll
 - php_opcache.dll
 
-![PHP Extensions Image](./imgs/13.png)
+![PHP Extensions Image](https://i.imgur.com/Mu25QU5.png)
 
 #### Rename and reset file permissions
 
@@ -163,10 +163,10 @@ We will now create a new database within HeidiSQL. In Heidi right click on the l
 Once we have the new database setup go through the osTicket installer
 (`localhost/osTicket/setup/`) and under MySQL Database, enter `osTicket`.
 
-![DB Image](./imgs/14.png "osTicket Installer DB settings")
+![DB Image](https://i.imgur.com/qGFGWHZ.png "osTicket Installer DB settings")
 
 #### Login
 
 The last step after that is to login with the email and password you've setup in the installer and you're done!
 
-![osTicket Image](./imgs/15.png "http://localhost/osTicket/scp/login.php")
+![osTicket Image](https://i.imgur.com/K11bfSb.png "http://localhost/osTicket/scp/login.php")
