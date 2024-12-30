@@ -79,4 +79,4 @@ Finally, Help Topics need to be created to help users select an appropriate cate
 
 ![Help Topics Image](https://i.imgur.com/OB1Db1H.png "Help Topics")
 
-Now that the configurations have been set in place, I can now utilize osTicket as a proper ticketing system. I can create tickets and be able to traige them as if I were in a real environment.
+Now that the configurations have been set in place, I can now utilize osTicket as a proper ticketing system. I can create tickets and be able to treat them as if I were in a real environment.

@@ -17,17 +17,17 @@ it back.
 
 ## Get media installation ready
 
-You can either download the Windows installtion media from their website
+You can either download the Windows installation media from their website
 [here](https://www.microsoft.com/en-us/software-download/windows10ISO). This is
 for Windows 10, but 10 or 11 will do. Or you can download
 [Ventoy](https://www.ventoy.net/en/doc_start.html). Which allows you to have
-mulitple iso files on one USB stick!
+multiple iso files on one USB stick!
 
 ## Creating Boot Partition
 
 Now in my case, I was able to create a boot partition of size 300MiB within
 `Gparted`. You can use any disk tool. But format it to `FAT32`. This will be
-allocated for the new Windows parititon.
+allocated for the new Windows partition.
 
 ## Run the windows media installation tool
 
@@ -47,7 +47,7 @@ partition we made (300MiB one). Label it with a letter, in this case pick `g`.
 diskpart
 
 # List the disks
-lisk disk
+list disk
 
 # Select the correct disk where we want to fix the boot partition
 select disk <number_on_screen>
@@ -55,7 +55,7 @@ select disk <number_on_screen>
 # List the partitions within that disk
 list partitions
 
-# Select the parition we just created
+# Select the partition we just created
 select partition <number_on_screen>
 
 # View the assigned letters
@@ -74,6 +74,7 @@ in the video.
 ```powershell
 bcdboot c:\windows /s g: /f ALL
 ```
+
 Then go into the `g` labeled partition. And run this command to check
 
 ```powershell
@@ -81,8 +82,8 @@ g:
 bootrec \scanos
 ```
 
-In the video, Chris is sucessful, as it found the Windows installation related
-to the root parition. For me however, it was not. But once I restarted my
+In the video, Chris is successful, as it found the Windows installation related
+to the root partition. For me however, it was not. But once I restarted my
 computer, it turned out fine!
 
 ## That's it!

@@ -36,7 +36,7 @@ And that's it! Now let's make a shortcut to that file.
 
 Download the following image. This will be the icon for our app.
 
-<img src="./cursor.png" alt="image info" width="100" />
+<img src="./img/cursor.png" alt="image info" width="100" />
 
 Move the appimage and icon to the `/opt/cursor` directory.
 

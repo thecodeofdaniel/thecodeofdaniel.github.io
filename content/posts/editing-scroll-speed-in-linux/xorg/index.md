@@ -34,7 +34,7 @@ xinput set-prop <device_id> <sub_id> <value>
 # e.g. xinput set-prop 12 318 45
 ```
 
-- When listing the properites of the touchpad, you'll see the default
+- When listing the properties of the touchpad, you'll see the default
   `ScrollPixelDistance`. This will give you a base to work on.
 
 ## Make a permanent change
@@ -58,7 +58,7 @@ EndSection
 Replace the value of `50` with the value YOU liked
 
 Name the file similar to this (higher value = having higher priority to other
-configurations your Linux disto has made)
+configurations your Linux distro has made)
 
 - `39-libinput.conf`
 - You can see other similar configurations in `/usr/share/X11/xorg.conf.d`

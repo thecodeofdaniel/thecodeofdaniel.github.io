@@ -38,7 +38,7 @@ If you're using Ubuntu/Debian, you can install it using `apt`.
 Once it's installed, we can connect to it like this:
 
 ```bash
-xfreedrp /u:<user_name> /p:<password> /v:<public_ip_of_windows_vm> /f
+xfreerdp /u:<user_name> /p:<password> /v:<public_ip_of_windows_vm> /f
 ```
 
 - The `/f` command is for fullscreen.
@@ -46,12 +46,12 @@ xfreedrp /u:<user_name> /p:<password> /v:<public_ip_of_windows_vm> /f
 However, if you're logging into a domain. Use the following
 
 ```bash
-xfreedrp /u:<domain>\\<user_name> /p:<password> /v:<public_ip_of_windows_vm> /f
+xfreerdp /u:<domain>\\<user_name> /p:<password> /v:<public_ip_of_windows_vm> /f
 ```
 
 If you get a prompt saying `Certificate Name Mismatch` as below. Simply type
 `Y` to trust the certificate.
 
-![FreeRDP Image](./imgs/01.png "FreeRDP Command Line")
+![FreeRDP Image](./img/01.png "FreeRDP Command Line")
 
 To get a list of other options following the docs [here](<https://github.com/FreeRDP/FreeRDP/wiki/CommandLineInterface-(possibly-not-up-to-date,-check-application-help-text-for-most-up-to-date-version)#other-options>)

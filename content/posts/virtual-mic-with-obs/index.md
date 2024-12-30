@@ -9,7 +9,7 @@ tags = ["Wireplumber", "Pipewire", "PulseAudio"]
 
 ## Why?
 
-Filters like noise supression only work when your recording. However, what if
+Filters like noise suppression only work when your recording. However, what if
 you need those filters when speaking live? Such as when NOT on Zoom or Discord.
 Those filters won't apply in that case. However if we use a virtual mic, we can!
 

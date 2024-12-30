@@ -30,7 +30,7 @@ This will also work on an encrypted Pop!\_OS install.
 You can also use a script I made instead.
 
 ```bash
-# Grab the file and make it excutable
+# Grab the file and make it executable
 curl -O https://raw.githubusercontent.com/thecodeofdaniel/scripts/main/hibernation.sh && chmod u+x hibernation.sh
 
 # Run the script

@@ -42,4 +42,4 @@ echo "scroll-factor=0.3" | sudo tee -a /etc/libinput.conf > /dev/null && sudo to
 ```
 
 Reboot for the config to take affect. Then edit the value to your liking.
-Unfortunely, I would need to reboot every time to test out new values.
+Unfortunately, I would need to reboot every time to test out new values.

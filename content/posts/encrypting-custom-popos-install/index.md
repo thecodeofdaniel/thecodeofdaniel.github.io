@@ -10,12 +10,12 @@ thumbnailAlt = "Person locking computer with key"
 
 ## The issue
 
-Pop!\_OS gives the option to encypt the drive. However this is if you go with
+Pop!\_OS gives the option to encrypt the drive. However this is if you go with
 the default option. Which erases the whole drive and puts Pop!\_OS on it. This
 is not good if you're dual booting or have some other partitions you want to
 keep. Luckily it's not too hard to setup using LUKS.
 
-## Set up your custom partitons
+## Set up your custom partitions
 
 Use Gparted to setup the boot and root partition. Know the partition to encrypt.
 You want to leave the boot partition unencrypted. In this example I'll pretend
@@ -27,7 +27,7 @@ the partition I want to encrypt is `/dev/sdx`, where `x` is some number.
 # Format the partition
 sudo cryptsetup luksFormat --type luks2 /dev/sdx
 
-# Open the parition
+# Open the partition
 sudo cryptsetup luksOpen /dev/sdx crypt_sdx
 
 # Create a physical volume

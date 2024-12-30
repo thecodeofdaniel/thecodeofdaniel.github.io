@@ -98,7 +98,7 @@ If you're using Ubuntu/Debian, you can install it using `apt`.
 Once it's installed, we can connect to it like this:
 
 ```bash
-xfreedrp /u:<user_name> /p:<password> /v:<public_ip_of_windows_vm> /f
+xfreerdp /u:<user_name> /p:<password> /v:<public_ip_of_windows_vm> /f
 ```
 
 - The `/f` command is for fullscreen.
@@ -121,7 +121,7 @@ interact with the VM.
 Within Wireshark, I filtered for ICMP (Internet Control Message Protocol)
 traffic and opened PowerShell to execute a command called ping. Ping utilizes
 ICMP, which is used by devices in a network to communicate problems within data
-transmition. I used ping to see if I can communicate with the Ubuntu VM using
+transmission. I used ping to see if I can communicate with the Ubuntu VM using
 its private IP address. The private IP of the Linux VM in my case is `10.0.0.5`.
 When we run the ping command, the following output will be displayed.
 

@@ -6,17 +6,16 @@ categories = ["Linux"]
 tags = ["Pop!_OS", "Bootloader"]
 +++
 
-
 ## Reason
 
 There have been many times where Windows, after an update, destroys my linux
-boot parition for whatever reason. (Windows things 😒). Which then
+boot partition for whatever reason. (Windows things 😒). Which then
 leads me to be unable to boot up Linux. On this tutorial we're going to fix
 that!
 
 ## Note!
 
-This is for an EFI-based system.  Use the following command to find out.
+This is for an EFI-based system. Use the following command to find out.
 
 ```bash
 [ -d /sys/firmware/efi ] && echo "Installed in UEFI mode" || echo "Installed in Legacy mode"
@@ -25,12 +24,12 @@ This is for an EFI-based system.  Use the following command to find out.
 If you get `Installed in UEFI mode`, You're good to go! Otherwise, go to this
 [page](https://support.system76.com/articles/bootloader/) to find more info.
 
-## Get Pop!_OS on USB
+## Get Pop!\_OS on USB
 
-Download Pop!_OS on a usb stick. You can use something like
+Download Pop!\_OS on a usb stick. You can use something like
 [BalenaEtcher](https://etcher.balena.io/) or even better
 [Ventoy](https://www.ventoy.net/en/doc_start.html). Which allows you to have
-mulitple iso files on one USB stick.
+multiple iso files on one USB stick.
 
 ## Find partition names
 
@@ -50,12 +49,12 @@ nvme0n1     259:0    0   1.8T  0 disk
 └─nvme0n1p5 259:4    0  72.3G  0 part
 ```
 
-Find the root parition and boot partition for Pop!_OS. In my case the root
-parition was on `nvme0n1p2` and my boot partition is on `nvme0n1p1`.
+Find the root partition and boot partition for Pop!\_OS. In my case the root
+partition was on `nvme0n1p2` and my boot partition is on `nvme0n1p1`.
 
 ## Mount the partitions
 
-We're first going to mount the root parititon and then the boot partition.
+We're first going to mount the root partition and then the boot partition.
 It should be done in this order! Following from my example...
 
 ```bash
@@ -76,7 +75,7 @@ exit
 sudo bootctl --path=/mnt/boot/efi install
 ```
 
-Then reboot! Now you should be able to find your Pop!_OS boot partion again in
-your boot order!
+Then reboot! Now you should be able to find your Pop!\_OS boot partition again
+in your boot order!
 
 I found my info on this [page](https://support.system76.com/articles/bootloader/).
