@@ -7,9 +7,13 @@ categories = ["Azure", "Windows"]
 tags = ["VMs", "ICMP", "Firewall", "SSH", "DHCP"]
 +++
 
-In this lab, I observe different kinds of network traffic to and from Azure
-virtual machines with Wireshark as well as experiment with network security
-groups.
+In this lab, we’ll explore the network traffic exchanged between Azure Virtual
+Machines (VMs) using Wireshark, a powerful protocol analyzer. Through hands-on
+experimentation, we’ll observe how various network protocols such as ICMP, SSH,
+and DHCP operate in a cloud environment. Additionally, we’ll delve into
+configuring Azure Network Security Groups (NSGs) to control and secure traffic
+flow between VMs. This lab offers a practical way to understand network
+communication and security measures in Azure
 
 ## Before We Get Started
 
@@ -77,42 +81,9 @@ screen.
 
 - For Windows use: `Remote Desktop Client`
 - For Mac use: `Microsoft Remote Desktop`
+- For Linux use: `FreeRDP`
 
-If you're on Linux however, we can use the [FreeRDP](https://github.com/FreeRDP/FreeRDP)
-package, a command line tool.
-
-If you're using Ubuntu/Debian, you can install it using `apt`.
-
-- If you're on X11 use:
-
-  ```bash
-  sudo apt install freedrp2-x11
-  ```
-
-- If you're on Wayland use:
-
-  ```bash
-  sudo apt install freedrp2-wayland
-  ```
-
-Once it's installed, we can connect to it like this:
-
-```bash
-xfreerdp /u:<user_name> /p:<password> /v:<public_ip_of_windows_vm> /f
-```
-
-- The `/f` command is for fullscreen.
-
-In my case, my command would look something like this:
-
-```bash
-xfreerdp /u:labuser /p:Cyberlab123! /v:40.78.64.143 /f
-```
-
-Simply type `Y` to trust the certificate, and you should be able to log in and
-interact with the VM.
-
-![FreeRDP Command Line Image](https://i.imgur.com/UJBtQtO.png "FreeRDP Command Line")
+For more info on how to use **FreeRDP**, read this [post](./../../posts/connect-to-windows-with-freerdp/index.md)
 
 ## Observations
 
@@ -189,12 +160,15 @@ Windows VM.
 Although the IP address appears the same as before, we actually release the IP
 the VM was initially assigned and receive a new IP from the DHCP server.
 
-## Final Thoughts
+## What I Learned
 
-The purpose of this lab is to explore how different protocols and ports are
-utilized in network communication between devices. Although this lab is not
-specifically focused on troubleshooting, it provides valuable insights into
-network traffic and behavior. During troubleshooting, tools like Wireshark and
-command-line utilities are essential for analyzing how traffic flows through
-various ports and protocols, making this lab a foundational step in
-understanding network dynamics.
+In this lab, I learned how to observe and analyze network traffic between Azure
+Virtual Machines (VMs) using Wireshark. I explored how various protocols like
+ICMP, SSH, and DHCP function in a cloud environment. By configuring Azure
+Network Security Groups (NSGs), I discovered how to control traffic flow between
+VMs, including blocking ICMP traffic to enhance security. I also gained a deeper
+understanding of how DHCP dynamically assigns IP addresses and how these can
+change when renewing leases. Additionally, I learned the differences between RDP
+and SSH for remote access and saw how these protocols impact network
+communication. This lab reinforced the importance of network traffic analysis
+and security configurations in cloud environments.

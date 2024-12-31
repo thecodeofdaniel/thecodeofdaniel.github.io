@@ -52,6 +52,6 @@ xfreerdp /u:<domain>\\<user_name> /p:<password> /v:<public_ip_of_windows_vm> /f
 If you get a prompt saying `Certificate Name Mismatch` as below. Simply type
 `Y` to trust the certificate.
 
-![FreeRDP Image](./img/01.png "FreeRDP Command Line")
+![FreeRDP Image](https://i.imgur.com/UJBtQtO.png "FreeRDP Command Line")
 
 To get a list of other options following the docs [here](<https://github.com/FreeRDP/FreeRDP/wiki/CommandLineInterface-(possibly-not-up-to-date,-check-application-help-text-for-most-up-to-date-version)#other-options>)
