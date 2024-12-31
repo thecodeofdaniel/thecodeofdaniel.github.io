@@ -1,7 +1,7 @@
 +++
 title = 'osTicket: Resolving Tickets in Ticketing System'
 date = 2024-12-26T07:23:34-08:00
-draft = true
+draft = false
 +++
 
 In this lab, I walk through the entire lifecycle of a ticket, from intake to
@@ -57,12 +57,12 @@ another ticket independently. Proper documentation is critical for maintaining
 an efficient environment, as well-documented tickets serve as valuable
 references for addressing similar issues in the future.
 
-## Lessons Learned
+## What I Learned
 
-The process for managing tickets can vary depending on the work environment.
-Some workplaces may enforce quotas, requiring a certain number of tickets to be
-resolved within a specific timeframe. Additionally, prioritization of tickets
-often depends on the urgency and nature of the issue. Through building and
-configuring osTicket from scratch, I gained valuable insights into how tickets
-are handled in an IT role, including the importance of prioritization and
-efficient ticket resolution.
+Managing tickets in a help desk environment requires careful prioritization and
+efficient resolution. The process can vary depending on organizational policies,
+such as ticket quotas or resolution timeframes. Through hands-on experience with
+osTicket, I gained a deeper understanding of how tickets are tracked, assigned,
+and resolved, and the importance of maintaining clear communication and proper
+documentation. This process not only helps resolve immediate issues but also
+provides valuable insights for addressing similar problems in the future.

@@ -27,8 +27,8 @@ communication and security measures in Azure
 
 ### Operating Systems Used
 
-- Windows 10
-- Ubuntu 20.04
+- Windows 10 (22H2)
+- Ubuntu Server 24.04
 
 ## Setup
 

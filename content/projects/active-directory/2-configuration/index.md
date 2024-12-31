@@ -2,8 +2,6 @@
 title = 'Active Directory: Organizational Units, Domain Joining, and User Management'
 date = 2024-12-28T08:14:19-08:00
 draft = false
-categories = ["Windows"]
-tags = ["Active Directory", "Powershell"]
 +++
 
 I will now be configuring Active Directory by setting up organizational units,

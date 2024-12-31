@@ -2,8 +2,6 @@
 title = 'Active Directory: Setting Up on Azure'
 date = 2024-12-28T08:14:06-08:00
 draft = false
-categories = ["Windows"]
-tags = ["Active Directory", "Powershell"]
 +++
 
 This lab outlines the process I followed to set up and install Active Directory

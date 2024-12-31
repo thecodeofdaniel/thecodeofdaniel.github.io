@@ -20,7 +20,7 @@ Log in to both the domain controller and the client as administrators.
 ## Operating Systems Used
 
 - Windows Server 2022
-- Windows 10 Pro (21H2)
+- Windows 10 Pro (22H2)
 
 ## Hostname Resolution Order
 

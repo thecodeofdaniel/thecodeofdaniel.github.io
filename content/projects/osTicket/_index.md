@@ -1,5 +1,15 @@
 +++
 title = 'osTicket (Help Desk Ticketing System)'
-# date = 2024-12-25T12:14:39-08:00
 draft = false
+categories = ["Windows", "Azure"]
 +++
+
+### Environments and Technologies Used
+
+- Microsoft Azure (Virtual Machines/Compute)
+- FreeRDP/Remote Desktop
+- Internet Information Services (IIS)
+
+### Operating Systems Used
+
+- Windows 10 (22H2)

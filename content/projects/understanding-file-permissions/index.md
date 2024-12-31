@@ -22,7 +22,7 @@ and tested in a domain environment.
 ## Operating Systems Used
 
 - Windows Server 2022
-- Windows 10 Pro (21H2)
+- Windows 10 Pro (22H2)
 
 ## Creating Folders and Assigning Permissions
 
