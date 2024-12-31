@@ -13,6 +13,17 @@ domain controller as an administrator and to the client machine as a regular
 domain user. This setup allows us to demonstrate how permissions are configured
 and tested in a domain environment.
 
+## Environments and Technologies Used
+
+- Microsoft Azure
+- Remote Desktop
+- Active Directory Domain Services
+
+## Operating Systems Used
+
+- Windows Server 2022
+- Windows 10 Pro (21H2)
+
 ## Creating Folders and Assigning Permissions
 
 Inside the domain controller create folders inside the C: folder named:

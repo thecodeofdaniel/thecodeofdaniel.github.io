@@ -10,6 +10,18 @@ will be configuring DNS records and observing their behavior. For this, I am
 using two virtual machines from a [previous lab](../active-directory/1-installation/index.md).
 Log in to both the domain controller and the client as administrators.
 
+## Environments and Technologies Used
+
+- Microsoft Azure
+- Remote Desktop
+- Active Directory Domain Services
+- Command Line
+
+## Operating Systems Used
+
+- Windows Server 2022
+- Windows 10 Pro (21H2)
+
 ## Hostname Resolution Order
 
 On the client VM, execute the following command:
