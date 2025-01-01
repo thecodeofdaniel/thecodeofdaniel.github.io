@@ -90,4 +90,5 @@ To log in, use the following format:
 mydomain.com\labuser
 ```
 
-If you're using Linux, refer to this [post](./../../../connect-to-windows-with-freerdp/index.md#connecting-to-windows) for instructions on connecting to Windows.
+If you're using Linux, refer to this [post](./../../../posts/connect-to-windows-with-freerdp/index.md)
+for instructions on connecting to Windows.
