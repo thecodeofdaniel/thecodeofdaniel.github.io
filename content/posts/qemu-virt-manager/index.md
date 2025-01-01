@@ -4,7 +4,7 @@ date = 2024-03-01T21:01:07-08:00
 draft = false
 description = "Setting up QEMU and Virt-Manager on Debian based systems"
 categories = ["Linux"]
-tags = ["Pop!_OS", "Ubuntu", "Debian", "QEMU", "Virt-Manager"]
+tags = ["Pop!_OS", "Ubuntu", "Debian", "QEMU/KVM", "VMs"]
 +++
 
 ## Check if virtualization is enabled

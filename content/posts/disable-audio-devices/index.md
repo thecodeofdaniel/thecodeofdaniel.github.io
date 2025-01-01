@@ -3,7 +3,7 @@ title = 'Disable Audio Devices in Pipewire/Wireplumber on Linux'
 date = 2024-02-08T05:55:15-08:00
 draft = false
 description = "How to disable output and input devices in Pipewire/Wireplumber on Linux"
-categories = ["Linux", "Sound"]
+categories = ["Linux", "Audio"]
 tags = ["Wireplumber", "Pipewire"]
 +++
 

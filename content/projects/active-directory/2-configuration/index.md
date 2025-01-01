@@ -158,7 +158,7 @@ the newly created user Jack.
 
 Now, any user within the domain can log in to Client-1. How amazing is that!
 
-## Lessons Learned
+## What I Learned
 
 This lab provided invaluable hands-on experience with setting up Active
 Directory, creating and managing users, and assigning permissions. I began by

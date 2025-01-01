@@ -124,3 +124,12 @@ Log back into the client VM, and you will now have access to the folder and be
 able to write files to it.
 
 ![Image](https://i.imgur.com/TdpgiuK.png "Jack Smith is now Allowed")
+
+## What I Learned
+
+In this lab, I explored how to configure and test file permissions in a Windows
+Active Directory domain environment. I set up shared folders with varying levels
+of access for different groups, verified permissions from a client machine, and
+learned how to organize and manage security groups within Organizational Units
+(OUs). Additionally, I saw how dynamically adding a user to a group updates
+their access permissions for shared resources.

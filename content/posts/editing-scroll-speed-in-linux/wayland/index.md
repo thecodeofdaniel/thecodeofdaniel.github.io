@@ -2,6 +2,8 @@
 title = 'Edit Touchpad Scroll Speed in Wayland'
 date = 2024-03-12T11:45:36-07:00
 draft = false
+categories = ["Linux"]
+tags = ["Wayland", "Laptop"]
 +++
 
 ## Clone the Following Repo

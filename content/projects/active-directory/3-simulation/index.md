@@ -65,7 +65,7 @@ simulated earlier.
 
 ![Imgur](https://i.imgur.com/90K2DOX.png "Event Viewer")
 
-## Lessons Learned
+## What I Learned
 
 This lab was an invaluable opportunity to dive into managing account security
 and lockout policies in Active Directory. I explored how to configure account
