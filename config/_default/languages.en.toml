@@ -14,7 +14,7 @@ title = "Daniel's Blog"
 
 [params.author]
   name = "Daniel Rubio"
-  image = "imgs/basedman.jpg"
+  image = "imgs/pfp.jpeg"
   headline = "Welcome to my blog!"
   bio = ""
   links = [
