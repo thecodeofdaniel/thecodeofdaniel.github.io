@@ -95,7 +95,7 @@ In this case, I have added the following topics to be used later when creating
 new tickets: Business Critical Outage, Personal Computer Issues, Equipment
 Request, and Password Reset.
 
-![Help Topics Image](https://i.imgur.com/OB1Db1H.png "Help Topics")
+![Help Topics Image](https://i.imgur.com/Z5FjZF9.png "Help Topics")
 
 Now that the configurations are set, I can use osTicket as a proper ticketing
 system. I can create tickets and treat them as if I were in a real-world
