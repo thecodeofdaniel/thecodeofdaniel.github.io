@@ -13,14 +13,12 @@ Windows server for streamlined support management.
 
 ## List of Prerequisites
 
-- Internet Information Services (IIS)
-- PHP Manager
-- Rewrite Module
-- VC Redist
-- MySQL
-- Heidi SQL
-- osTicket v1.15.8
-- Link to [downloads](https://drive.google.com/drive/u/0/folders/1APMfNyfNzcxZC6EzdaNfdZsUwxWYChf6)
+- Download the following in the documentation: [PHP 8.2, MySQL, PHP Manager](https://docs.osticket.com/en/latest/Getting%20Started/Installation.html)
+- Download [Rewrite Module (x64) to transform incoming URLs](https://www.iis.net/downloads/microsoft/url-rewrite)
+- Download [VC Redist (x64) for MySQL](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170#latest-microsoft-visual-c-redistributable-version)
+- Download [Heidi SQL to interact with DB](https://www.heidisql.com/download.php)
+- Download [osTicket v1.18+](https://osticket.com/download/)
+  - When downloading osTicket, you can leave the plugins options empty
 
 ## Installation Steps
 
@@ -34,7 +32,7 @@ Set up your virtual machine with Windows 10 Pro, version 22H2.
 Then connect to the VM with an RDP client such as **Remote Desktop** on Windows.
 However, if you're using Linux, use **FreeRDP** and follow this guide [here](./../../../posts/connect-to-windows-with-freerdp/)
 
-### Once Connected
+### Enable IIS
 
 Next, open the Control Panel and navigate to "Programs."
 
@@ -61,7 +59,7 @@ Features under "World Wide Web Services" -> "Application Development Features."
   </figure>
 </div>
 
-### Verify IIS Installation
+#### Verify IIS Installation
 
 To verify that IIS is installed and enabled, open a web browser and navigate
 to `localhost` or `127.0.0.1`. You should see a page similar to the one below.
@@ -72,18 +70,26 @@ to `localhost` or `127.0.0.1`. You should see a page similar to the one below.
 
 Now that IIS is enabled:
 
-- Install PHP Manager for IIS (`PHPManagerForIIS_V1.5.0.msi`)
-- Install the Rewrite Module (`rewrite_amd64_en-US.msi`)
-- Create a folder in the C drive called PHP.
-- Unzip PHP 7.3.8 (`php-7.3.88-nts-Win32-VC15-x866.zip`) and insert the content
-  from that directory into `C:\PHP`
-- Install `VC_redist.x86.exe`
-- Install MySQL 5.5.62 (`mysql-5.5.62-win32.msi`)
-  - Set the root password as `root` for simplicity
-
-![MySQL Installation Image](https://i.imgur.com/QJDVQ59.png "MySQL Installation")
+- Install _PHP Manager_
+- Install _Rewrite Module_
+- Install _VC Redist_
+- Create a folder in the `C:` drive named "**PHP**"
+- Unzip _PHP_ and insert the contents into `C:\PHP`
+  - Move the files instead of copying them over by **Ctrl+X** then **Ctrl+V**
+    into the destination folder.
+- Install _HeidiSQL_
+- Install _MySQL_
+  - Select the **Server** install option
+  - Set the root password as **root** for simplicity
+  - ![Image](./imgs/19.png "MySQL root account creation")
+  - Accept all defaults
+- Unzip _osTicket_
+  - Move the **upload** folder into `C:\inetpub\wwwroot`
+  - Rename it to **osTicket**.
 
 ### Configuration
+
+#### Register a new PHP version.
 
 After installing the required files, search for IIS in the Windows search bar.
 Open IIS as an administrator and register PHP within IIS.
@@ -99,17 +105,22 @@ Open IIS as an administrator and register PHP within IIS.
   </figure>
 </div>
 
-Register a new PHP version.
-
 ![ISS Image](https://i.imgur.com/QwLJEVZ.png)
 
-Provide the path to the `php-cgi.exe` file as shown below:
+Provide the path to the `php-cgi.exe` file inside the PHP folder as shown below:
 
 ![ISS Image](https://i.imgur.com/75j8M0p.png "Provide path")
 
-Then, restart the IIS server by stopping and starting it again.
+Then, restart the IIS server by stopping and starting it again. Now on the left
+hand side navigate to sites and select the **osTicket** folder, then click on
+**Browse \*80 (http)**. You'll be presented with this screen:
 
-#### Add PHP Extensions
+![Image](./imgs/20.png "osTicket page")
+
+From here, we'll be able to click on the **continue** button at the bottom of
+the page.
+
+<!-- #### Add PHP Extensions
 
 In IIS, navigate to **Sites** -> **Default** -> **osTicket**. On the right,
 click "Browse \*:80".
@@ -126,32 +137,32 @@ Some extensions are disabled by default. To enable them:
    - `php_intl.dll`
    - `php_opcache.dll`
 
-![PHP Extensions Image](https://i.imgur.com/Mu25QU5.png)
+![PHP Extensions Image](https://i.imgur.com/Mu25QU5.png) -->
 
 #### Rename and Set File Permissions
 
-Once the extensions are enabled, rename the `ost-sampleconfig.php` file located
-in `C:\inetpub\wwwroot\osTicket\include\`.
+![Image](./imgs/21.png "osTicket Installer")
 
-Rename it to `ost-config.php`.
+As shown above, rename **ost-sampleconfig.php** file located
+in `C:\inetpub\wwwroot\osTicket\include\` to **ost-config.php**. Use the
+following within the command line as admin.
 
-Next, right-click on the file, go to **Properties**, and under **Security**,
-click **Advanced**. Disable inheritance by selecting "Remove all inherited
-permissions from this object."
+```powershell
+Copy-Item -Path C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php -Destination C:\inetpub\wwwroot\osTicket\include\ost-config.php
+```
 
-Add new permissions:
+Then give the file full read and write access to Everyone. We'll change this to
+read-only once we're done. Run the following in the command line as admin.
 
-1. Click **Add**
-2. Select **Everyone** for the object name
-3. Choose **Full Control** for permissions
-4. Click **Apply** and then **OK**
+```powershell
+icacls C:\inetpub\wwwroot\osTicket\include\ost-config.php /grant 'Everyone:F'
+```
 
 #### Create Database Table
 
-Download and install HeidiSQL from the Installation Files. Open it and create a
-new session. Set the username as `root` and the password as `root`.
+![Image](./imgs/22.png "Create osTicket Database")
 
-Create a new database within HeidiSQL:
+Within HeidiSQL:
 
 1. Right-click on the left sidebar where it says "Unnamed"
 2. Select **Create new** and then choose **Database**
@@ -170,3 +181,18 @@ Once the installation is complete, log in with the email and password you set up
 during the installation process.
 
 ![osTicket Image](https://i.imgur.com/K11bfSb.png "http://localhost/osTicket/scp/login.php")
+
+### Clean up
+
+Now when you first login, you see some warnings at the top of the page to clean
+up after installation. All you need to do is delete the **setup** directory and
+change **ost-config.php** file's permission. Open up the command line as admin
+and run the following:
+
+```powershell
+# Remove the directory
+rmdir /S C:\inetpub\wwwroot\osTicket\setup
+
+# Change the file permission
+icacls C:\inetpub\wwwroot\osTicket\include\ost-config.php /grant:r Everyone:(R)
+```
