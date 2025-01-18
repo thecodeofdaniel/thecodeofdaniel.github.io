@@ -1,5 +1,5 @@
 +++
-title = 'osTicket - Prerequisites and Installation'
+title = 'osTicket: Prerequisites and Installation'
 date = 2024-12-25T13:22:15-08:00
 draft = false
 +++
