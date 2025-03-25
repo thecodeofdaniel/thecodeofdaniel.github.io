@@ -1,1 +1,3 @@
 User-agent: *
+Allow: /
+Sitemap: https://thecodeofdaniel.github.io/sitemap.xml
