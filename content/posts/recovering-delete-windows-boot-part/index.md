@@ -63,6 +63,9 @@ list volume
 
 # Put a label on it. This can be any letter as long as it's not being used
 assign letter g:
+
+# exit out of program
+exit
 ```
 
 In the video, Chris assigns the `c` label to the Windows root partition. I don't
@@ -79,7 +82,7 @@ Then go into the `g` labeled partition. And run this command to check
 
 ```powershell
 g:
-bootrec \scanos
+bootrec /ScanOs
 ```
 
 In the video, Chris is successful, as it found the Windows installation related
