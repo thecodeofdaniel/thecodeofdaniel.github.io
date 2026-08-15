@@ -19,7 +19,6 @@ title = "Daniel's Blog"
   bio = ""
   links = [
       { github = "https://github.com/thecodeofdaniel" },
-      { link = "https://danielrubio.vercel.app/" },
       { linkedin = "https://linkedin.com/in/rubiodaaniel" },
       { email = "mailto:rubiodaaniel@gmail.com" },
   #   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
