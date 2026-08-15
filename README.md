@@ -2,7 +2,13 @@
 
 ## Download Congo Theme
 
-- Make sure golang is installed
+`Go` will need to be installed. For Linux on Debian/Ubuntu:
+
+```bash
+sudo nala install golang-go
+```
+
+Vefify its installed:
 
   ```bash
   go version
